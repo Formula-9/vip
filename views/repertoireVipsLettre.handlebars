@@ -1,8 +1,8 @@
 <h1> Cliquez sur une lettre: </h1>
 
 {{#each vips}}
-    <div>
+    <div class="blockVip">
         <img src="/images/vip/{{this.adrPhoto}}" alt="{{this.prenomVip}} {{this.nomVip}}">
-        <p>{{this.prenomVip}} {{this.nomVip}}</p>
+        <p><a href="/repertoire/vip/{{this.vipNumero}}">{{this.prenomVip}} {{this.nomVip}}</a></p>
     </div>
 {{/each}}
