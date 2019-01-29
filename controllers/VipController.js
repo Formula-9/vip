@@ -16,7 +16,7 @@ module.exports.Repertoire = function (request, response) {
 
 module.exports.RepertoireLettre = function(request, response) {
     response.title = 'Répertoire des stars';
-    RepertoireModel.recupererNoms(request.params.lettre, function(err, result) {
+    RepertoireModel.recupererVips(request.params.lettre, function(err, result) {
         if (err) {
             console.log(err);
             return;
