@@ -13,3 +13,15 @@ module.exports.Repertoire = function (request, response) {
         response.render('repertoireVips', response);
     });
 };
+
+module.exports.RepertoireLettre = function(request, response) {
+    response.title = 'Répertoire des stars';
+    RepertoireModel.recupererNoms(request.params.lettre, function(err, result) {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        response.vips = result;
+        response.render('repertoireVipsLettre', response);
+    });
+};
