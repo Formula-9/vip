@@ -1,1 +1,5 @@
-<h1> Mettre ici la première lettre du nom des VIPs </h1>
+<h1> Cliquez sur une lettre: </h1>
+
+{{#each tableLettres}}
+    <a href="repertoire/{{this.lettre}}">{{this.lettre}}</a>
+{{/each}}
