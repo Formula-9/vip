@@ -1,0 +1,32 @@
+{{> listeLettres }}
+
+<div class="dataVip">
+    <img src="/images/vip/{{photoOfficielle}}" alt="{{nomPrenomVip}}" />
+    <div class="vipDataEntry">
+        <h4>Nom:</h4>
+        <p>{{nomPrenomVip}}</p>
+    </div>
+    <div class="vipDataEntry">
+        <h4>Date de naissance:</h4>
+        <p>{{formatDate dateNaissance 'dddd D MMMM YYYY' }}</p>
+    </div>
+    <div class="vipDataEntry">
+        <h4>Nationalité:</h4>
+        <p>{{nationalite}}</p>
+    </div>
+    <div class="vipDataEntry">
+        <h4>Principal(aux) film(s):</h4>
+        {{#each films}}
+            <p>{{this.nomFilm}} ({{formatDate this.dateRealisation 'MMMM YYYY'}})</p>
+        {{/each}}
+    </div>
+    <div class="vipDataEntry">
+        <h4>Qui suis-je ?:</h4>
+        <p>{{texteVip}}</p>
+    </div>
+    <div class="gallery">
+        {{#each photosNonOfficielles }}
+            <img src="/images/vip/{{this.adrPhoto}}" alt=""/>
+        {{/each}}
+    </div>
+</div>

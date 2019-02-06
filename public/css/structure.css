@@ -103,3 +103,26 @@ a {
     margin-left: 5%;
 }
 
+.listeLettres {
+    margin-bottom: 1.5%;
+}
+
+.listeLettres > p {
+    display: inline;
+}
+
+.dataVip > img {
+    display: inline-block;
+}
+
+.vipDataEntry {
+    margin-bottom: 1%;
+}
+
+.vipDataEntry > h4, .vipDataEntry > p {
+    display: inline;
+}
+
+.gallery > img {
+    height: 25vh;
+}
