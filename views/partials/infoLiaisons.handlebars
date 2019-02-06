@@ -1,0 +1,12 @@
+{{#if liaisons}}
+<div class="vipDataEntry">
+    <h4>Liaison(s):</h4>
+    {{#each liaisons}}
+        <div class="liaisonEntry">
+            <p><a href="/repertoire/vip/{{this.numeroAmant}}">{{this.prenomAmant}} {{this.nomAmant}}</a> ({{formatDate this.finLiaison 'MMMM YYYY'}})</p>
+            <h4>Raison Fin Liaison:</h4>
+            <p>{{this.motifFin}}</p>
+        </div>
+    {{/each}}
+</div>
+{{/if}}

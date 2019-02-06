@@ -1,0 +1,10 @@
+{{#if films}}
+<div class="vipDataEntry">
+    <h4>Profession:</h4>
+    <p>Act</p>
+    <h4>Principal(aux) film(s):</h4>
+    {{#each films}}
+        <p>{{this.nomFilm}} ({{formatDate this.dateRealisation 'MMMM YYYY'}})</p>
+    {{/each}}
+</div>
+{{/if}}

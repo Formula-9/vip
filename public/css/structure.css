@@ -123,6 +123,10 @@ a {
     display: inline;
 }
 
+.vipDataEntry > p {
+    display: inline-block;
+}
+
 .gallery > a > img {
     height: 25vh;
 }

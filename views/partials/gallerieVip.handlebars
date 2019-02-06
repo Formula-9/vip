@@ -1,0 +1,9 @@
+{{#if photosNonOfficielles}}
+<div class="gallery">
+    {{#each photosNonOfficielles }}
+        <a href="/images/vip/{{this.adrPhoto}}"  data-lightbox="{{this.adrPhoto}}" data-title="{{this.sujetPhoto}} - {{this.commPhoto}}">
+            <img src="/images/vip/{{this.adrPhoto}}" alt=""/>
+        </a>
+    {{/each}}
+</div>
+{{/if}}

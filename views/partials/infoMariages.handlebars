@@ -1,0 +1,12 @@
+{{#if mariages}}
+<div class="vipDataEntry">
+    <h4>Mariage(s):</h4>
+    {{#each mariages}}
+        <div class="mariageEntry">
+            <p><a href="/repertoire/vip/{{this.conjoint}}">{{this.prenomConjoint}} {{this.nomConjoint}}</a> ({{formatDate this.dateMariage 'MMMM YYYY'}}{{#if this.finMariage}} --> {{formatDate this.finMariage 'MMMM YYYY'}}{{/if}})</p>
+            <h4>Lieu:</h4>
+            <p>{{this.lieu}}</p>
+        </div>
+    {{/each}}
+</div>
+{{/if}}
