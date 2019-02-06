@@ -21,6 +21,22 @@
         {{/each}}
     </div>
     <div class="vipDataEntry">
+        <h4>Principal(aux) défilé(s):</h4>
+        {{#each defiles}}
+            <p>{{this.lieuDefile}} ({{formatDate this.dateDefile 'MMMM YYYY'}}) de <a href="/repertoire/vip/{{this.couturierNumero}}">{{this.couturierPrenom}} {{this.couturierNom}}</a></p>
+        {{/each}}
+    </div>
+    <div class="vipDataEntry">
+        <h4>Mariage(s):</h4>
+        {{#each mariages}}
+            <div class="mariageEntry">
+                <p><a href="/repertoire/vip/{{this.conjoint}}">{{this.prenomConjoint}} {{this.nomConjoint}}</a> ({{formatDate this.dateMariage 'MMMM YYYY'}}{{#if this.finMariage}} --> {{formatDate this.finMariage 'MMMM YYYY'}}{{/if}})</p>
+                <h4>Lieu:</h4>
+                <p>{{this.lieu}}</p>
+            </div>
+        {{/each}}
+    </div>
+    <div class="vipDataEntry">
         <h4>Qui suis-je ?:</h4>
         <p>{{texteVip}}</p>
     </div>

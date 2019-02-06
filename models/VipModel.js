@@ -98,3 +98,26 @@ module.exports.recupererPrincipauxFilms = function(idVip, callback) {
         }
     });
 };
+
+module.exports.recupererDefiles = function(idVip, callback) {
+    db.getConnection(function(err, connexion) {
+        if (!err) {
+            let sql = "SELECT DISTINCT d.DEFILE_DATE as dateDefile, d.DEFILE_LIEU as lieuDefile, v_c.VIP_PRENOM as couturierPrenom, v_c.VIP_NOM as couturierNom, v_c.VIP_NUMERO as couturierNumero FROM vip v_d, vip v_c, defile d, defiledans dd WHERE v_d.VIP_NUMERO = " + idVip + " AND d.DEFILE_NUMERO = dd.DEFILE_NUMERO AND v_c.VIP_NUMERO = d.VIP_NUMERO";
+            // console.log(sql);
+            connexion.query(sql, callback);
+            connexion.release();
+        }
+    });
+};
+
+module.exports.recupererMariages = function(idVip, callback) {
+    db.getConnection(function(err, connexion) {
+        if (!err) {
+            let sql = "SELECT v.VIP_NOM as nomConjoint, v.VIP_PRENOM as prenomConjoint, m.DATE_EVENEMENT as dateMariage, m.MARIAGE_LIEU as lieu, m.MARIAGE_FIN as finMariage, m.VIP_VIP_NUMERO as conjoint FROM mariage m, vip v WHERE m.VIP_NUMERO = " + idVip + " AND v.VIP_NUMERO = m.VIP_VIP_NUMERO\n" +
+                      "UNION\n" +
+                      "SELECT v.VIP_NOM as nomConjoint, v.VIP_PRENOM as prenomConjoint, m.DATE_EVENEMENT as dateMariage, m.MARIAGE_LIEU as lieu, m.MARIAGE_FIN as finMariage, m.VIP_NUMERO as conjoint FROM mariage m, vip v WHERE m.VIP_VIP_NUMERO = " + idVip + " AND v.VIP_NUMERO = m.VIP_NUMERO";
+            connexion.query(sql, callback);
+            connexion.release();
+        }
+    });
+};
