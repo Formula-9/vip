@@ -58,7 +58,7 @@ module.exports.recupererTexteVip = function(idVip, callback) {
 module.exports.recupererPhotosNonOfficielles = function(idVip, callback) {
     db.getConnection(function(err, connexion) {
         if (!err) {
-            let sql = "SELECT p.PHOTO_ADRESSE AS adrPhoto FROM photo p WHERE p.PHOTO_NUMERO != 1 AND p.VIP_NUMERO = " + idVip;
+            let sql = "SELECT p.PHOTO_ADRESSE AS adrPhoto, p.PHOTO_SUJET as sujetPhoto, p.PHOTO_COMMENTAIRE as commPhoto FROM photo p WHERE p.PHOTO_NUMERO != 1 AND p.VIP_NUMERO = " + idVip;
             // console.log(sql);
             connexion.query(sql, callback);
             connexion.release();

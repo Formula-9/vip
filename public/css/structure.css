@@ -123,6 +123,6 @@ a {
     display: inline;
 }
 
-.gallery > img {
+.gallery > a > img {
     height: 25vh;
 }
