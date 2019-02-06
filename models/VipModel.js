@@ -66,28 +66,6 @@ module.exports.recupererPhotosNonOfficielles = function(idVip, callback) {
     });
 };
 
-module.exports.estVipMannequin = function(idVip, callback) {
-    db.getConnection(function(err, connexion) {
-        if (!err) {
-            let sql = "SELECT 'Mannequin' AS estMannequin FROM mannequin WHERE VIP_NUMERO = " + idVip;
-            // console.log(sql);
-            connexion.query(sql, callback);
-            connexion.release();
-        }
-    });
-};
-
-module.exports.estActeur = function(idVip, callback) {
-    db.getConnection(function(err, connexion) {
-        if (!err) {
-            let sql = "SELECT 'Acteur' AS estActeur FROM acteur WHERE VIP_NUMERO = " + idVip;
-            // console.log(sql);
-            connexion.query(sql, callback);
-            connexion.release();
-        }
-    });
-};
-
 module.exports.recupererPrincipauxFilms = function(idVip, callback) {
     db.getConnection(function(err, connexion) {
         if (!err) {
@@ -121,3 +99,16 @@ module.exports.recupererMariages = function(idVip, callback) {
         }
     });
 };
+
+module.exports.recupererLiaisons = function(idVip, callback) {
+    db.getConnection(function(err, connexion) {
+        if (!err) {
+            let sql = "SELECT v.VIP_NUMERO as numeroAmant, v.VIP_NOM as nomAmant, v.VIP_PRENOM as prenomAmant, l.LIAISON_MOTIFFIN as motifFin, l.DATE_EVENEMENT as finLiaison FROM liaison l, vip v WHERE l.VIP_NUMERO = " + idVip + " AND l.VIP_VIP_NUMERO = v.VIP_NUMERO\n" +
+                      "UNION\n" +
+                      "SELECT v.VIP_NUMERO as numeroAmant, v.VIP_NOM as nomAmant, v.VIP_PRENOM as prenomAmant, l.LIAISON_MOTIFFIN as motifFin, l.DATE_EVENEMENT as finLiaison FROM liaison l, vip v WHERE l.VIP_VIP_NUMERO = " + idVip + " AND l.VIP_NUMERO = v.VIP_NUMERO";
+            connexion.query(sql, callback);
+            connexion.release();
+        }
+    });
+};
+
