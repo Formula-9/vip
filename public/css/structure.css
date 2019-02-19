@@ -103,6 +103,10 @@ a {
     margin-left: 5%;
 }
 
+.blockVip > img {
+    height: 25vh;
+}
+
 .listeLettres {
     margin-bottom: 1.5%;
 }
@@ -111,20 +115,48 @@ a {
     display: inline;
 }
 
-.dataVip > img {
-    display: inline-block;
+.dataVip {
+    text-align: left;
 }
 
-.vipDataEntry {
+.dataVip > img {
+    display: inline-block;
+    float: left;
+    margin-right: 0.5%;
+}
+
+.dataVip > div {
     margin-bottom: 1%;
 }
 
-.vipDataEntry > h4, .vipDataEntry > p {
+.infosNaissance > *, .infosNomPrenom > *, .infosNationatlite > *, .infosQuiSuisJe > * {
     display: inline;
 }
 
-.vipDataEntry > p {
-    display: inline-block;
+.infoFilms > h4 + p, .infoFilms > h4, .infosMariages > h4 + p, .infosMariages > h4{
+    display: inline;
+}
+
+.infoFilms > *, .infosMariages > *, .infosLiaisons > * {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.infoFilms :nth-child(3){
+    display: block;
+}
+
+.infoDefiles :nth-child(1), .infoDefiles :nth-child(2) {
+    display: inline;
+}
+
+.infoDefiles > * {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.infosLiaisons > h4, .infosLiaisons > h4 + p {
+    display: inline;
 }
 
 .gallery > a > img {

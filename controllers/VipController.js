@@ -58,6 +58,8 @@ module.exports.DetailsVip = function(request, response) {
         VipModel.recupererMariages(idVip, function(err, result) { callback(null, result) })
     }, function (callback) {
         VipModel.recupererLiaisons(idVip, function(err, result) { callback(null, result) })
+    }, function (callback) {
+        VipModel.recupererGenreVip(idVip, function(err, result) { callback(null, result) })
     }], function(err, result) {
         if (err) {
             console.log(err);
@@ -74,6 +76,7 @@ module.exports.DetailsVip = function(request, response) {
         response.defiles = result[8];
         response.mariages = result[9];
         response.liaisons = result[10];
+        response.vipGenre = result[11][0].vipGenre;
 
         response.render('pageVip', response);
     });

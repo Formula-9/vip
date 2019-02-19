@@ -22,6 +22,17 @@ module.exports.recupererNomEtPrenomVip = function(idVip, callback) {
     });
 };
 
+module.exports.recupererGenreVip = function(idVip, callback) {
+    db.getConnection(function(err, connexion) {
+        if (!err) {
+            let sql = "SELECT v.VIP_SEXE AS vipGenre FROM vip v WHERE v.VIP_NUMERO = " + idVip;
+            // console.log(sql);
+            connexion.query(sql, callback);
+            connexion.release();
+        }
+    });
+};
+
 module.exports.recupererDateNaissanceVip = function(idVip, callback) {
     db.getConnection(function(err, connexion) {
         if (!err) {
@@ -69,7 +80,7 @@ module.exports.recupererPhotosNonOfficielles = function(idVip, callback) {
 module.exports.recupererPrincipauxFilms = function(idVip, callback) {
     db.getConnection(function(err, connexion) {
         if (!err) {
-            let sql = "SELECT f.FILM_TITRE AS nomFilm, f.FILM_DATEREALISATION AS dateRealisation FROM film f, joue j WHERE  f.FILM_NUMERO = j.FILM_NUMERO AND j.VIP_NUMERO = " + idVip;
+            let sql = "SELECT v.VIP_NUMERO as realisateurNum, v.VIP_NOM as realisateurNom, v.VIP_PRENOM as realisateurPrenom, f.FILM_TITRE AS nomFilm, f.FILM_DATEREALISATION AS dateRealisation FROM film f, joue j, realisateur r, vip v WHERE f.FILM_NUMERO = j.FILM_NUMERO AND j.VIP_NUMERO = " + idVip + " AND r.VIP_NUMERO = v.VIP_NUMERO AND f.VIP_NUMERO = r.VIP_NUMERO";
             // console.log(sql);
             connexion.query(sql, callback);
             connexion.release();
@@ -112,3 +123,15 @@ module.exports.recupererLiaisons = function(idVip, callback) {
     });
 };
 
+module.exports.recupererAlbums = function(idVip, callback) {
+    db.getConnection(function(err, connexion) {
+        if (!err) {
+            let sql = "SELECT m.MAISONDISQUE_NOM, a.ALBUM_TITRE, a.ALBUM_DATE, ch.CHANTEUR_SPECIALITE FROM album a, maisondisque m, composer c, chanteur ch WHERE ch.VIP_NUMERO = c.VIP_NUMERO AND c.VIP_NUMERO = " + idVip + " AND m.MAISONDISQUE_NUMERO = a.MAISONDISQUE_NUMERO";
+            connexion.query(sql, callback);
+            connexion.release();
+        }
+    });
+};
+
+/*
+* SELECT DISTINCT m.MAISONDISQUE_NOM, a.ALBUM_TITRE, a.ALBUM_DATE, ch.CHANTEUR_SPECIALITE FROM album a, maisondisque m, composer c, chanteur ch WHERE ch.VIP_NUMERO = c.VIP_NUMERO AND c.VIP_NUMERO = 29 AND m.MAISONDISQUE_NUMERO = a.MAISONDISQUE_NUMERO*/

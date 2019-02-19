@@ -1,10 +1,10 @@
 {{#if films}}
-<div class="vipDataEntry">
+<div class="infoFilms">
     <h4>Profession:</h4>
-    <p>Act</p>
+    <p>{{#ifCond vipGenre '==' 'F'}}Actrice{{else}}Acteur{{/ifCond}}</p>
     <h4>Principal(aux) film(s):</h4>
     {{#each films}}
-        <p>{{this.nomFilm}} ({{formatDate this.dateRealisation 'MMMM YYYY'}})</p>
+        <p>{{this.nomFilm}} ({{formatDate this.dateRealisation 'MMMM YYYY'}}) de <a href="/repertoire/vip/{{this.realisateurNum}}">{{this.realisateurPrenom}} {{this.realisateurNom}}</a></p>
     {{/each}}
 </div>
 {{/if}}

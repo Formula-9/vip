@@ -2,25 +2,13 @@
 
 <div class="dataVip">
     <img src="/images/vip/{{photoOfficielle}}" alt="{{nomPrenomVip}}" />
-    <div class="vipDataEntry">
-        <h4>Nom:</h4>
-        <p>{{nomPrenomVip}}</p>
-    </div>
-    <div class="vipDataEntry">
-        <h4>Date de naissance:</h4>
-        <p>{{formatDate dateNaissance 'dddd D MMMM YYYY' }}</p>
-    </div>
-    <div class="vipDataEntry">
-        <h4>Nationalité:</h4>
-        <p>{{nationalite}}</p>
-    </div>
+    {{> nomPrenom }}
+    {{> infoNaissance }}
+    {{> infoNationalite }}
     {{> infoFilms }}
     {{> infoDefiles }}
     {{> infoMariages }}
     {{> infoLiaisons }}
-    <div class="vipDataEntry">
-        <h4>Qui suis-je ?:</h4>
-        <p>{{texteVip}}</p>
-    </div>
+    {{> quiSuisJe }}
     {{> gallerieVip }}
 </div>
