@@ -162,3 +162,57 @@ a {
 .gallery > a > img {
     height: 25vh;
 }
+
+
+/* ================== Articles ================== */
+
+/* Zone Article */
+.zoneArticle {
+    border: 1px solid black;
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+}
+
+.zoneArticle > h3 {
+    margin-left: 2%;
+    margin-top: -1.5%;
+    width: 8%;
+    padding-left: 0.5%;
+    background: white;
+}
+
+.zoneArticle > p {
+    margin-left: 1%;
+    margin-top: -1.5%;
+}
+
+/* Liste VIP */
+.listeVips {
+    width: 15%;
+    text-align: center;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-left: 10%;
+}
+
+.listeVips > img {
+    padding: 0 32.60%;
+    background-color: black;
+}
+
+.listeVips > ul {
+    margin-left: -20%;
+    list-style-type: none;
+}
+
+.listeVips > ul > li {
+    text-decoration: underline;
+}
+
+.listeVips > ul > li > a {
+    color: black;
+}
+

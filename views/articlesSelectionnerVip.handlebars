@@ -1,6 +1,12 @@
+<div class="zoneArticle">
+    <h3>Article</h3>
+    <p>Choisissez un VIP pour voir les articles le concernant</p>
+</div>
 <div class="listeVips">
-
+    <img src="images/vips.png" />
+    <ul>
     {{#each listeVips}}
-        <a href="/articles/vip/{{this.vipNumero}}">{{this.vipPrenom}} {{this.vipNom}}</a>
+        <li><a href="/articles/vip/{{this.vipNumero}}">{{this.vipPrenom}} {{this.vipNom}}</a></li>
     {{/each}}
+    </ul>
 </div>

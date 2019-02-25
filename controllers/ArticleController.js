@@ -11,5 +11,6 @@ module.exports.SelectionnerVip = function(request, response) {
             return;
         }
         response.listeVips = result[0];
+        response.render('articlesSelectionnerVip', response);
     });
 };
