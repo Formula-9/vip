@@ -235,3 +235,23 @@ a {
     color: black;
 }
 
+/* Connexion - Admin */
+#formConnexion {
+    background: black;
+    color: white;
+    padding-bottom: 1%;
+}
+
+#formConnexion > form {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.formConnexionChamp {
+    margin-bottom: 2%;
+}
+
+.formConnexionBoutons {
+    margin-bottom: 2%;
+}
+
