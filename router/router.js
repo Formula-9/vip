@@ -24,6 +24,7 @@ module.exports = function (app) {
 
     //Article
     app.get('/articles', ArticleController.SelectionnerVip);
+    app.get('/articles/vip/:idVip', ArticleController.SelectionnerArticlesVip);
 
     // tout le reste
     app.get('*', HomeController.NotFound);

@@ -1,0 +1,9 @@
+{{#each articles}}
+    <div class="zoneArticle">
+        <h4>Article</h4>
+        <h3>{{../nomPrenomVip}}</h3>
+        <p>{{this.resumeArticle}}</p>
+        <p>[Ajouté le {{formatDate this.dateInsertion 'D MMMM YYYY'}}]<a href="/repertoire/vip/{{../idVip}}">voir sa fiche</a></p>
+    </div>
+{{/each}}
+{{> listeVipsArticle }}
