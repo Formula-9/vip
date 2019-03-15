@@ -1,0 +1,5 @@
+{{#ifCond session.connecte '===' true}}
+    {{> ajoutVipForm }}
+{{else}}
+    {{> verifierSession }}
+{{/ifCond}}

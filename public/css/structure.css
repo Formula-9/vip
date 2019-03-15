@@ -255,3 +255,32 @@ a {
     margin-bottom: 2%;
 }
 
+/* Ajout VIP */
+
+#ajoutVip {
+    border: 1px solid black;
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+}
+
+#ajoutVip > h4 {
+    margin-left: 2.5%;
+    margin-top: -1.5%;
+    width: 11%;
+    padding-left: 0.5%;
+    background: white;
+}
+
+.formAjoutVip {
+    margin-top: 1.5%;
+}
+
+.formAjoutVip > label {
+    margin-left: 3%;
+}
+
+.formAjoutVip > input {
+
+}

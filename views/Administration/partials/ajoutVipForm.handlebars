@@ -1,0 +1,40 @@
+<div id="ajoutVip">
+    <h4>Ajout VIPs</h4>
+    <form method="post" action="ajouterVip">
+        <div class="formAjoutVip">
+            <label for="nomVip">Nom* : </label>
+            <input type="text" name="nomVip" id="nomVip" required/>
+        </div>
+        <div class="formAjoutVip">
+            <label for="prenomVip">Prénom* : </label>
+            <input type="text" name="prenomVip" id="prenomVip" required/>
+        </div>
+        <div class="formAjoutVip">
+            <label for="genreVip">Sexe : </label>
+            <select id="genreVip" name="genreVip">
+                <option value="M">Masculin</option>
+                <option value="F">Féminin</option>
+            </select>
+        </div>
+        <div class="formAjoutVip">
+            <label for="naissanceVip">Date de naissance : </label>
+            <input type="date" name="naissanceVip" id="naissanceVip" required/>
+        </div>
+        <div class="formAjoutVip">
+            <label for="nationaliteVip">Nationalité : </label>
+            <select id="nationaliteVip" name="nationaliteVip">
+                {{#each nationalites}}
+                    <option value="{{this.numero}}">{{this.nom}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="formAjoutVip">
+            <label for="commentaireVip">Commentaire : </label>
+            <input type="text" name="commentaireVip" id="commentaireVip" required/>
+        </div>
+        <div class="formAjoutVip">
+            <label for="imageVip">Sélectionner l'image : </label>
+            <input type="file" name="imageVip" id="imageVip" accept="image/x-png,image/gif,image/jpeg" required/>
+        </div>
+    </form>
+</div>

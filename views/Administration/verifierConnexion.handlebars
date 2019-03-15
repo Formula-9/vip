@@ -1,0 +1,14 @@
+<div id="formConnexion">
+    <h1>Administration</h1>
+    {{#ifCond loginOk '===' true}}
+        <p>Authentification réussie ! Veuillez patienter pendant la redirection...</p>
+        <script>
+            setTimeout(function () {
+                window.location = "/ajouterVip";
+            }, 2000)
+        </script>
+    {{else}}
+        <p>Authentification échouée !</p>
+        <p><a href="/">Cliquez ici pour revenir en arrière et réessayer.</a></p>
+    {{/ifCond}}
+</div>

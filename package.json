@@ -8,6 +8,7 @@
     "body-parser": "^1.18.3",
     "cookie-parser": ">=1.4",
     "crypto": "*",
+    "cryptr": "^4.0.2",
     "express": "^4.16.4",
     "express-handlebars": "*",
     "express-session": ">1.12",
