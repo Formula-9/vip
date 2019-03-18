@@ -11,11 +11,13 @@
 <div id="container">
     <div id="header">
         <div class="baniere"><img src="/images/sixvoix.png" alt="SIXVOIX l'encyclopédie des stars" /> </div>
+        {{#ifCond session.connecte '===' true}}
+        <div class="login"><p>Bonjour, {{session.login}}</p><p><a href="/deconnexion">Déconnexion</a></p></div>
+        {{/ifCond}}
     </div>
     <div class="menu_haut">
         <ul>
-            <li><a href="/accueil">ACCUEIL</a></li>
-            <li class="traitVertical"><a href="/repertoire">VIPS</a></li>
+            <li><a href="/repertoire">VIPS</a></li>
             <li class="traitVertical"><a href="/album">PHOTOS</a></li>
         </ul>
     </div>

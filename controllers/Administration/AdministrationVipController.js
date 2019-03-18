@@ -9,7 +9,7 @@ module.exports.AjouterVip = function(request, response) {
             console.log(err);
             return;
         }
-        console.log(response.locals.session.connecte);
+
         response.nationalites = result[0];
         response.render('ajouterVip', response);
     });

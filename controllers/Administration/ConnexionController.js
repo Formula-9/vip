@@ -20,8 +20,14 @@ module.exports.VerificationConnexion = function(request, response) {
         }
         let storedPassword = cryptr.decrypt(result[0][0]['p']);
         let loginOk = storedPassword === password;
+        response.locals.session.login = login;
         response.locals.session.connecte = loginOk;
         response.loginOk = loginOk;
         response.render('verifierConnexion', response);
     });
+};
+
+module.exports.InterfaceDeconnexion = function(request, response) {
+    response.locals.session.connecte = false;
+    response.render('deconnexion', response);
 };

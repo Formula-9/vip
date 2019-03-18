@@ -30,11 +30,20 @@
         </div>
         <div class="formAjoutVip">
             <label for="commentaireVip">Commentaire : </label>
-            <input type="text" name="commentaireVip" id="commentaireVip" required/>
+            <textarea name="commentaireVip" id="commentaireVip" rows="6" cols="50"></textarea>
         </div>
         <div class="formAjoutVip">
             <label for="imageVip">Sélectionner l'image : </label>
             <input type="file" name="imageVip" id="imageVip" accept="image/x-png,image/gif,image/jpeg" required/>
         </div>
+        <div class="formAjoutVip">
+            <label for="sujetImageVip">Sujet de l'image : </label>
+            <input type="text" name="sujetImageVip" id="sujetImageVip" />
+        </div>
+        <div class="formAjoutVip">
+            <label for="commentairePhotoVip">Commentaire de la photo : </label>
+            <textarea name="commentairePhotoVip" id="commentairePhotoVip" rows="6" cols="50"></textarea>
+        </div>
+        <input type="submit" value="Ajouter le VIP" />
     </form>
 </div>

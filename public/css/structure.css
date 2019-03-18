@@ -259,7 +259,7 @@ a {
 
 #ajoutVip {
     border: 1px solid black;
-    width: 50%;
+    width: 80%;
     display: inline-block;
     vertical-align: top;
     text-align: left;
@@ -267,8 +267,8 @@ a {
 
 #ajoutVip > h4 {
     margin-left: 2.5%;
-    margin-top: -1.5%;
-    width: 11%;
+    margin-top: -1%;
+    width: 7%;
     padding-left: 0.5%;
     background: white;
 }
@@ -279,8 +279,79 @@ a {
 
 .formAjoutVip > label {
     margin-left: 3%;
+    width: 18%;
+    display: inline-block;
 }
 
-.formAjoutVip > input {
+label[for="commentaireVip"], label[for="commentairePhotoVip"] {
+    float: left;
+}
 
+#ajoutVip > form > input[type="submit"] {
+    display: block;
+    margin: 1% auto;
+}
+
+textarea {
+    resize: none;
+    margin-left: 0.3%;
+}
+
+/* Header - Admin */
+.login {
+    display: inline-block;
+    float: right;
+    margin-top: 3%;
+    margin-right: 10%;
+    width: 15%;
+    border: 1px solid white;
+}
+
+.login a {
+    color: white;
+}
+
+.login p:last-child {
+    margin-left: 5%;
+    font-style: italic;
+}
+
+.login p {
+    display: inline-block;
+}
+
+/* Menu gauche avec les options d'administration */
+.listeVipsAdmin {
+    width: 10%;
+    text-align: center;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 5px;
+    float: left;
+    margin-left: 3%;
+    background-color: black;
+}
+
+.listeVipsAdmin > img {
+    padding: 0 32.60%;
+    margin-top: 5%;
+    margin-left: -7.5%;
+}
+
+.listeVipsAdmin > ul {
+    margin-left: -31%;
+    list-style-type: none;
+}
+
+.listeVipsAdmin > ul > li {
+    border-top: 1px solid white;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    font-size: 120%;
+    text-decoration: underline;
+}
+
+.listeVipsAdmin > ul > li > a {
+    color: white;
+    font-weight: bold;
 }

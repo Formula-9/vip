@@ -5,6 +5,8 @@ let moment = require('moment');
 
 function hbsHelpers(handlebars) {
     return handlebars.create({
+        layoutsDir: 'views/Administration/layouts',
+
         defaultLayout: 'main',
 
         partialsDir: ['views/Administration/partials/'],
