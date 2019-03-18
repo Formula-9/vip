@@ -17,6 +17,7 @@ module.exports = function (app) {
 
     /* Photos */
     app.get('/ajouterPhoto', AdministrationPhotoController.AjouterPhoto);
+    app.post('/ajouterPhoto', AdministrationPhotoController.AjouterDonneesPhoto);
 
     // tout le reste
     app.get('*', HomeController.NotFound);

@@ -22,6 +22,17 @@ module.exports.recupererNomEtPrenomVip = function(idVip, callback) {
     });
 };
 
+module.exports.recupererNomsEtPrenomsVip = function(callback) {
+    db.getConnection(function(err, connexion) {
+        if (!err) {
+            let sql = "SELECT v.VIP_NUMERO as vipNumero, v.VIP_PRENOM AS vipPrenom, v.VIP_NOM AS vipNom FROM vip v ORDER BY vipNom";
+            // console.log(sql);
+            connexion.query(sql, callback);
+            connexion.release();
+        }
+    });
+};
+
 module.exports.recupererGenreVip = function(idVip, callback) {
     db.getConnection(function(err, connexion) {
         if (!err) {
@@ -127,6 +138,16 @@ module.exports.recupererAlbums = function(idVip, callback) {
     db.getConnection(function(err, connexion) {
         if (!err) {
             let sql = "SELECT m.MAISONDISQUE_NOM, a.ALBUM_TITRE, a.ALBUM_DATE, ch.CHANTEUR_SPECIALITE FROM album a, maisondisque m, composer c, chanteur ch WHERE ch.VIP_NUMERO = c.VIP_NUMERO AND c.VIP_NUMERO = " + idVip + " AND m.MAISONDISQUE_NUMERO = a.MAISONDISQUE_NUMERO";
+            connexion.query(sql, callback);
+            connexion.release();
+        }
+    });
+};
+
+module.exports.recupererNombrePhotosPourVip = function(idVip, callback) {
+    db.getConnection(function(err, connexion) {
+        if (!err) {
+            let sql = "SELECT COUNT(DISTINCT p.PHOTO_NUMERO) AS nbPhotos FROM photo p WHERE p.VIP_NUMERO = " + idVip;
             connexion.query(sql, callback);
             connexion.release();
         }

@@ -1,0 +1,6 @@
+{{#ifCond session.connecte '===' true}}
+    {{> optionsPhoto }}
+    {{> ajoutPhotoForm }}
+{{else}}
+    {{> verifierSession }}
+{{/ifCond}}

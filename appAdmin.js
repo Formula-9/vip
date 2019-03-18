@@ -3,11 +3,13 @@ let express         = require('express'),
     cookieParser    = require('cookie-parser'),
     bodyParser      = require('body-parser'), //pour récupérer les résultats des post
     http            = require('http'),
-    path            = require('path');
+    path            = require('path'),
+    fileUpload      = require('express-fileupload');
 
 let app = express();
 
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(fileUpload());
 app.set('port', 9801);
 app.set('views', path.join(__dirname, 'views/Administration'));
 

@@ -1,0 +1,29 @@
+<div id="ajoutPhoto">
+    <h4>Ajouter Photo</h4>
+    <form method="post" action="ajouterPhoto" enctype="multipart/form-data">
+        <div class="formAjoutPhoto">
+            <label for="idVip">Nom du vip : </label>
+            <select id="idVip" name="idVip" required>
+                {{#each nomsEtPrenoms}}
+                    <option value="{{this.vipNumero}}">{{this.vipNom}} {{this.vipPrenom}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="formAjoutPhoto">
+            <label for="adressePhoto">Adresse de la photo : </label>
+            <input type="file" name="adressePhoto" id="adressePhoto" />
+        </div>
+        <div class="formAjoutPhoto">
+            <label for="titrePhoto">Titre : </label>
+            <input type="text" name="titrePhoto" id="titrePhoto" accept="image/x-png,image/gif,image/jpeg" required/>
+        </div>
+        <div class="formAjoutPhoto">
+            <label for="commentairePhoto">Un petit commentaire : </label>
+            <textarea name="commentairePhoto" id="commentairePhoto" rows="6" cols="50"></textarea>
+        </div>
+        <div class="formAjoutPhotoControls">
+            <input type="submit" value="Envoyer" />
+            <input type="reset" value="Annuler" />
+        </div>
+    </form>
+</div>

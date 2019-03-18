@@ -283,7 +283,7 @@ a {
     display: inline-block;
 }
 
-label[for="commentaireVip"], label[for="commentairePhotoVip"] {
+label[for="commentaireVip"], label[for="commentairePhotoVip"], label[for="commentairePhoto"] {
     float: left;
 }
 
@@ -354,4 +354,92 @@ textarea {
 .listeVipsAdmin > ul > li > a {
     color: white;
     font-weight: bold;
+}
+
+/* Menu gauche avec options photo */
+.listePhotosAdmin {
+    width: 10%;
+    text-align: center;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 5px;
+    float: left;
+    margin-left: 3%;
+    background-color: black;
+}
+
+.listePhotosAdmin > img {
+    padding: 0 32.60%;
+    margin-top: 5%;
+    margin-left: -20.5%;
+}
+
+.listePhotosAdmin > ul {
+    margin-left: -31%;
+    list-style-type: none;
+}
+
+.listePhotosAdmin > ul > li {
+    border-top: 1px solid white;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    font-size: 120%;
+    text-decoration: underline;
+}
+
+.listePhotosAdmin > ul > li > a {
+    color: white;
+    font-weight: bold;
+}
+
+/* Ajouter Photo */
+#ajoutPhoto {
+    border: 1px solid black;
+    width: 80%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+}
+
+#ajoutPhoto > h4 {
+    margin-left: 2.5%;
+    margin-top: -1%;
+    width: 9.15%;
+    padding-left: 0.5%;
+    background: white;
+}
+
+#ajoutPhoto > form > div > label {
+    font-weight: bold;
+}
+
+.formAjoutPhoto {
+    margin-top: 1.5%;
+}
+
+.formAjoutPhoto > label {
+    margin-left: 3%;
+    width: 18%;
+    display: inline-block;
+}
+
+.formAjoutPhotoControls {
+    text-align: center;
+}
+
+.formAjoutPhotoControls > input {
+    display: inline-block;
+    margin: 1% auto;
+}
+
+/* Résultat insertion */
+.insertionReussie {
+    background: #00DD7F;
+    color: #44802F;
+
+}
+
+.insertionEchouee {
+    background: #00DD7F;
+    color: #44802F;
 }
