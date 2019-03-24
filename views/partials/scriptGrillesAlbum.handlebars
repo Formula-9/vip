@@ -1,0 +1,43 @@
+<script type="text/javascript">
+    let nbGrilles = document.querySelectorAll('[id^="albumGrilleVip"]').length;
+    let grilleActuelle = 0;
+
+    function masquerGrillesSaufGrilleNumero(grilleActuelle) {
+        for (let iteratorGrilles = 0; iteratorGrilles < nbGrilles; iteratorGrilles++) {
+            let idGrille = "albumGrilleVip" + iteratorGrilles;
+            if (grilleActuelle !== iteratorGrilles) {
+                document.getElementById(idGrille).style.display = 'none';
+            } else {
+                document.getElementById(idGrille).style.display = 'block';
+            }
+        }
+    }
+
+    function allerGrilleNumero(numero) {
+        grilleActuelle = numero;
+        masquerLiensSelonGrille();
+        masquerGrillesSaufGrilleNumero(grilleActuelle);
+    }
+
+    function masquerLiensSelonGrille() {
+        if (grilleActuelle === 0) {
+            document.getElementById("lienGrillePrecedante").style.display = "none";
+            document.getElementById("lienGrilleDebut").style.display = "none";
+            document.getElementById("lienGrilleSuivante").style.display = "inline";
+            document.getElementById("lienGrilleFinale").style.display = "inline";
+        } else if (grilleActuelle === nbGrilles - 1) {
+            document.getElementById("lienGrillePrecedante").style.display = "inline";
+            document.getElementById("lienGrilleDebut").style.display = "inline";
+            document.getElementById("lienGrilleSuivante").style.display = "none";
+            document.getElementById("lienGrilleFinale").style.display = "none";
+        } else {
+            document.getElementById("lienGrilleSuivante").style.display = "inline";
+            document.getElementById("lienGrilleFinale").style.display = "inline";
+            document.getElementById("lienGrillePrecedante").style.display = "inline";
+            document.getElementById("lienGrilleDebut").style.display = "inline";
+        }
+    }
+
+    masquerGrillesSaufGrilleNumero(grilleActuelle);
+    masquerLiensSelonGrille(grilleActuelle);
+</script>

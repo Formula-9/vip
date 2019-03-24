@@ -12,6 +12,7 @@ module.exports.SelectionnerVip = function(request, response) {
             return;
         }
         response.listeVips = result[0];
+        response.title = 'Articles sur les stars';
         response.render('articlesSelectionnerVip', response);
     });
 };
@@ -33,6 +34,7 @@ module.exports.SelectionnerArticlesVip = function(request, response) {
         response.articles = result[1];
         response.nomPrenomVip = result[2][0].vipPrenom + " " + result[2][0].vipNom;
         response.idVip = idVip;
+        response.title = 'Articles sur ' + response.nomPrenomVip;
         response.render('articlesVip', response);
     });
 };

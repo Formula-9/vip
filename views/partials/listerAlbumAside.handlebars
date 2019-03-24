@@ -1,0 +1,13 @@
+<div id="albumPhotoVipAside">
+    {{#each imagesAside}}
+        <div id="albumGrilleVip{{@index}}">
+            {{#each this}}
+                <a href="/album/{{this.vipNumero}}"><img src="/images/vip/{{this.adrPhoto}}"></a>
+            {{/each}}
+        </div>
+    {{/each}}
+    <a id="lienGrilleDebut" href="#" onclick="allerGrilleNumero(0)">Début</a>
+    <a id="lienGrillePrecedante" href="#" onclick="allerGrilleNumero(grilleActuelle-1)">Précédent</a>
+    <a id="lienGrilleSuivante" href="#" onclick="allerGrilleNumero(grilleActuelle+1)">Suivant</a>
+    <a id="lienGrilleFinale" href="#" onclick="allerGrilleNumero(nbGrilles-1)">Fin</a>
+</div>

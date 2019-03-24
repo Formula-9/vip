@@ -1,0 +1,38 @@
+<script type="text/javascript">
+    let nombrePhotos = document.querySelectorAll('[id^="imgAlbumVip"]').length;
+    let donneesAffichees = 0;
+    allerPhotoEtCommentaireNumero(0);
+
+    function allerPhotoEtCommentaireNumero(numero) {
+        donneesAffichees = numero;
+        masquerLiensSelonPhotoEtCommentaire();
+        masquerPhotosEtCommentairesSaufNumero(donneesAffichees);
+    }
+
+    function masquerLiensSelonPhotoEtCommentaire() {
+        if (donneesAffichees === 0) {
+            document.getElementById("photoEtCommentairePrecedant").style.display = "none";
+            document.getElementById("photoEtCommentaireSuivant").style.display = "inline-block";
+        } else if (donneesAffichees === nombrePhotos - 1) {
+            document.getElementById("photoEtCommentaireSuivant").style.display = "none";
+            document.getElementById("photoEtCommentairePrecedant").style.display = "inline-block";
+        } else {
+            document.getElementById("photoEtCommentaireSuivant").style.display = "inline-block";
+            document.getElementById("photoEtCommentairePrecedant").style.display = "inline-block";
+        }
+    }
+
+    function masquerPhotosEtCommentairesSaufNumero() {
+        for (let iteratorAlbum = 0; iteratorAlbum < nombrePhotos; iteratorAlbum++) {
+            let idCommentaire = "commentairePhotoVip" + iteratorAlbum;
+            let idPhoto = "imgAlbumVip" + iteratorAlbum;
+            if (donneesAffichees !== iteratorAlbum) {
+                document.getElementById(idCommentaire).style.display = 'none';
+                document.getElementById(idPhoto).style.display = 'none';
+            } else {
+                document.getElementById(idCommentaire).style.display = 'block';
+                document.getElementById(idPhoto).style.display = 'block';
+            }
+        }
+    }
+</script>

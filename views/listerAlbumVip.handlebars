@@ -1,0 +1,20 @@
+<h1> Album Photo </h1>
+<div id="albumPhotoVip">
+    <p></p>
+    <div id="photoEtControles">
+        <a id="photoEtCommentairePrecedant" href="#" onclick="allerPhotoEtCommentaireNumero(donneesAffichees-1);">&lt;&lt;</a>
+        {{#each sectionCommentaire}}
+            <img id="imgAlbumVip{{@index}}" src="/images/vip/{{this.adresse}}">
+        {{/each}}
+        <a id="photoEtCommentaireSuivant" href="#" onclick="allerPhotoEtCommentaireNumero(donneesAffichees+1);">&gt;&gt;</a>
+    </div>
+    <div id="commentairePhoto">
+        <h4>Commentaire</h4>
+        {{#each sectionCommentaire}}
+            <p id="commentairePhotoVip{{@index}}">{{this.commentaire}}</p>
+        {{/each}}
+    </div>
+</div>
+{{> listerAlbumAside }}
+{{> scriptGrillesAlbum }}
+{{> scriptPhotoCommentaireAlbum }}

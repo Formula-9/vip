@@ -235,6 +235,58 @@ a {
     color: black;
 }
 
+/* Album VIP */
+#albumPhotoVip {
+    border: 1px solid black;
+    width: 65%;
+    display: inline-block;
+}
+
+#commentairePhoto {
+    border: 1px solid black;
+    width: 80%;
+    display: inline-block;
+    margin-bottom: 1%;
+}
+
+#commentairePhoto > h4 {
+    margin-left: 1.5%;
+    margin-top: -1.5%;
+    width: 15%;
+    background: white;
+}
+
+#albumPhotoVipAside {
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+[id^=albumGrilleVip] {
+    width: 220px;
+    padding-top: 2%;
+}
+
+[id^=albumGrilleVip] img {
+    width: 48px;
+    height: 96px;
+}
+
+[id^=imgAlbumVip] {
+    display: block;
+    margin: 0 auto 2%;
+}
+
+#photoEtCommentairePrecedant, #photoEtCommentaireSuivant {
+    border: 1px solid black;
+    margin-bottom: 1%;
+}
+
+
+/* ========================== [ ^ PAGES CLIENT ^ ] ========================== */
+/* ========================================================================== */
+/* ========================== [ V PARTIE ADMIN V ] ========================== */
+
 /* Connexion - Admin */
 #formConnexion {
     background: black;

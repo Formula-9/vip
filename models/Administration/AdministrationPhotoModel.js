@@ -11,3 +11,14 @@ module.exports.AjouterDonneesPhoto = function(numeroPhoto, titre, commentaire, a
         }
     });
 };
+
+module.exports.RecupererToutesLesPhotos = function(callback) {
+    db.getConnection(function(err, connexion) {
+        if (!err) {
+            let sql = "";
+            // console.log(sql);
+            connexion.query(sql, callback);
+            connexion.release();
+        }
+    });
+};
