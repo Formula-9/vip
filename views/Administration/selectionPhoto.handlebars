@@ -1,0 +1,24 @@
+{{#ifCond session.connecte '===' true}}
+<div>
+    <h1>Sélectionnez l'image à supprimer</h1>
+    <form>
+        <img id="imageSelectionnee" alt="Image à supprimer">
+        <select id="cheminPhoto" name="cheminPhoto" onchange="afficherImage();" required>
+            {{#each listePhotos}}
+                <option value="{{this.adresse}}">{{this.adresse}}</option>
+            {{/each}}
+        </select>
+        <input type="submit" value="Supprimer la photo">
+    </form>
+</div>
+<script type="text/javascript">
+    function afficherImage() {
+        let img = document.getElementById("imageSelectionnee");
+        let select = document.getElementById("cheminPhoto");
+        img.src = "/images/vip/" + select.options[select.selectedIndex].value;
+    }
+    afficherImage();
+</script>
+{{else}}
+    {{> verifierSession }}
+{{/ifCond}}

@@ -244,7 +244,7 @@ a {
 
 #commentairePhoto {
     border: 1px solid black;
-    width: 80%;
+    width: 60%;
     display: inline-block;
     margin-bottom: 1%;
 }
@@ -494,4 +494,26 @@ textarea {
 .insertionEchouee {
     background: #00DD7F;
     color: #44802F;
+}
+
+/* Modifier Vip */
+#modifierVip {
+    border: 1px solid black;
+    width: 80%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+}
+
+#modifierVip > h4 {
+    margin-left: 2.5%;
+    margin-top: -1%;
+    width: 8.3%;
+    padding-left: 0.5%;
+    background: white;
+}
+
+#modifierVip input[type="submit"] {
+    display: block;
+    margin: 1% auto;
 }

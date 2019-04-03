@@ -1,0 +1,42 @@
+<div id="modifierVip">
+    <h4>Modifier VIP</h4>
+    <form method="post" action="confirmerDonneesVip">
+        <div class="formAjoutVip">
+            <label for="nomVip">Nom* : </label>
+            <input type="text" name="nomVip" id="nomVip" value="{{vipNom}}" required/>
+        </div>
+        <div class="formAjoutVip">
+            <label for="prenomVip">Prénom* : </label>
+            <input type="text" name="prenomVip" id="prenomVip"  value="{{vipPrenom}}" required/>
+        </div>
+        <div class="formAjoutVip">
+            <label for="genreVip">Sexe : </label>
+            <select id="genreVip" name="genreVip">
+                <option value="M" {{#ifCond genreVip '===' 'M'}} selected {{/ifCond}}>Masculin</option>
+                <option value="F" {{#ifCond genreVip '===' 'F'}} selected {{/ifCond}}>Féminin</option>
+            </select>
+        </div>
+        <div class="formAjoutVip">
+            <label for="naissanceVip">Date de naissance : </label>
+            <input type="date" name="naissanceVip" id="naissanceVip" value="{{formatDate vipNaissance 'YYYY-MM-DD'}}" required/>
+        </div>
+        <div class="formAjoutVip">
+            <label for="nationaliteVip">Nationalité : </label>
+            <select id="nationaliteVip" name="nationaliteVip">
+                {{#each nationalites}}
+                    {{#ifCond nationalite '===' this.numero}}
+                        <option value="{{this.numero}} selected">{{this.nom}}</option>
+                    {{else}}
+                        <option value="{{this.numero}}">{{this.nom}}</option>
+                    {{/ifCond}}
+                {{/each}}
+            </select>
+        </div>
+        <div class="formAjoutVip">
+            <label for="commentaireVip">Commentaire : </label>
+            <textarea name="commentaireVip" id="commentaireVip" rows="6" cols="50">{{this.vipTexte}}</textarea>
+        </div>
+        <input id="idVip" type="hidden" value="{{this.idVip}}" />
+        <input type="submit" value="Mettre à jour le VIP" />
+    </form>
+</div>

@@ -1,0 +1,11 @@
+{{#ifCond resultatInsetion '===' true}}
+    <div class="insertionReussie">
+        <h2>Insertion Réussie !</h2>
+        <p>L'insertion a réussie. <a href="/ajouterVip">Cliquez ici</a> pour retourner à l'écran précédant et ajouter un autre VIP.</p>
+    </div>
+{{else}}
+    <div class="insertionEchouee">
+        <h2>Insertion Échouée !</h2>
+        <p>L'insertion a échouée. <a href="/ajouterVip">Cliquez ici</a> pour retourner à l'écran précédant et réessayer.</p>
+    </div>
+{{/ifCond}}

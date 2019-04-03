@@ -102,7 +102,7 @@ module.exports.recupererPrincipauxFilms = function(idVip, callback) {
 module.exports.recupererDefiles = function(idVip, callback) {
     db.getConnection(function(err, connexion) {
         if (!err) {
-            let sql = "SELECT DISTINCT d.DEFILE_DATE as dateDefile, d.DEFILE_LIEU as lieuDefile, v_c.VIP_PRENOM as couturierPrenom, v_c.VIP_NOM as couturierNom, v_c.VIP_NUMERO as couturierNumero FROM vip v_d, vip v_c, defile d, defiledans dd WHERE v_d.VIP_NUMERO = " + idVip + " AND d.DEFILE_NUMERO = dd.DEFILE_NUMERO AND v_c.VIP_NUMERO = d.VIP_NUMERO";
+            let sql = "SELECT DISTINCT d.DEFILE_DATE as dateDefile, d.DEFILE_LIEU as lieuDefile, v_c.VIP_PRENOM as couturierPrenom, v_c.VIP_NOM as couturierNom, v_c.VIP_NUMERO as couturierNumero FROM vip v_c, defile d, defiledans dd WHERE dd.VIP_NUMERO = " + idVip + " AND d.DEFILE_NUMERO = dd.DEFILE_NUMERO AND v_c.VIP_NUMERO = d.VIP_NUMERO";
             // console.log(sql);
             connexion.query(sql, callback);
             connexion.release();
@@ -148,6 +148,18 @@ module.exports.recupererNombrePhotosPourVip = function(idVip, callback) {
     db.getConnection(function(err, connexion) {
         if (!err) {
             let sql = "SELECT COUNT(DISTINCT p.PHOTO_NUMERO) AS nbPhotos FROM photo p WHERE p.VIP_NUMERO = " + idVip;
+            connexion.query(sql, callback);
+            connexion.release();
+        }
+    });
+};
+
+module.exports.recupererInformationsVip = function(idVip, callback) {
+    db.getConnection(function(err, connexion) {
+        if (!err) {
+            let sql = "SELECT v.VIP_NUMERO AS vipNumero, v.VIP_PRENOM AS vipPrenom, v.VIP_NOM AS vipNom, "+
+                      "v.VIP_NAISSANCE AS vipNaissance, v.NATIONALITE_NUMERO AS numNationalite, v.VIP_TEXTE as vipTexte, " +
+                      "v.VIP_SEXE AS vipSexe FROM VIP v WHERE v.VIP_NUMERO = " + idVip;
             connexion.query(sql, callback);
             connexion.release();
         }
