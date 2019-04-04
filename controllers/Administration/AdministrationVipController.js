@@ -24,8 +24,8 @@ module.exports.ConfirmerAjoutVip = function(request, response) {
     let nationaliteVip = request.body.nationaliteVip;
     let commentaireVip = request.body.commentaireVip;
 
-    let photo = request.files.adressePhoto;
-    let nomFichierPhoto = request.files.adressePhoto.name;
+    let photo = request.files.imageVip;
+    let nomFichierPhoto = request.files.imageVip.name;
     let emplacementPhoto = './public/images/vip/' + nomFichierPhoto;
     let sujetPhoto = request.body.titrePhoto;
     let commentairePhoto = request.body.commentairePhoto;
@@ -109,16 +109,34 @@ module.exports.ConfirmerModificationVip = function(request, response) {
             resultatModification = false;
         }
         response.resultatModification = resultatModification;
-        response.render('resultatModificationVip');
+        response.render('resultatModificationVip', response);
     })
 };
 
-//TODO!
 module.exports.SupprimerVip = function(request, response) {
-
+    async.parallel([ function(callback) {
+        VipModel.recupererNomsEtPrenomsVip(function (err, result) { callback(err, result); })
+    }], function(err, result) {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        response.vips = result[0];
+        response.render('suppressionVip', response);
+    });
 };
 
-//TODO!
 module.exports.ConfirmerSuppressionVip = function(request, response) {
-
+    let idVip = request.body.idVip;
+    async.parallel([function (callback) {
+        AdministrationVipModel.supprimerVip(idVip, function(err, result) { callback(null, result); })
+    }], function(err, result) {
+        let resultatSuppression = true;
+        if (err) {
+            console.log(err);
+            resultatSuppression = false;
+        }
+        response.resultatSuppression = resultatSuppression;
+        response.render('confirmationSuppressionVip', response);
+    })
 };

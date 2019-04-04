@@ -1,0 +1,13 @@
+<div class="selectionVipForm">
+    <h4 class="suppressionHeader">Supprimer VIP</h4>
+    <p>Attention ! La suppression d'un VIP est définitive, et entraînera la suppression des données liées à celui-ci!</p>
+    <form method="post" action="confirmerSuppressionVip">
+        <label for="idVip">Sélectionnez le VIP à supprimer: </label>
+        <select name="idVip" id="idVip">
+            {{#each vips}}
+                <option value="{{this.vipNumero}}">{{this.vipNom}} {{this.vipPrenom}}</option>
+            {{/each}}
+        </select>
+        <input type="submit" value="Supprimer le VIP">
+    </form>
+</div>

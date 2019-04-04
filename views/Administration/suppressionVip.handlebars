@@ -1,5 +1,6 @@
 {{#ifCond session.connecte '===' true}}
-
+    {{> optionsVips }}
+    {{> selectionVipSuppression }}
 {{else}}
     {{> verifierSession }}
 {{/ifCond}}

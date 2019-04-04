@@ -19,11 +19,10 @@ module.exports.AjouterPhoto = function (request, response) {
 };
 
 let CallbackInsertion = function (response, err, result) {
-    let insertionOk = false;
+    let insertionOk = true;
     if (err) {
+        insertionOk = false;
         console.log(err);
-    } else {
-        insertionOk = true;
     }
     response.insertionOk = insertionOk;
     response.render('resultatInsertionPhoto', response);

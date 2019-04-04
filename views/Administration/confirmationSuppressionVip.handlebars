@@ -1,0 +1,11 @@
+{{#ifCond resultatSuppression '===' true}}
+    <div class="insertionReussie">
+        <h2>Suppression Réussie !</h2>
+        <p>La suppression a réussie. <a href="/supprimerVip">Cliquez ici</a> pour retourner à l'écran précédant et supprimer un autre VIP.</p>
+    </div>
+{{else}}
+    <div class="insertionEchouee">
+        <h2>Suppression Échouée !</h2>
+        <p>La suppression a échouée. <a href="/supprimerVip">Cliquez ici</a> pour retourner à l'écran précédant et réessayer.</p>
+    </div>
+{{/ifCond}}

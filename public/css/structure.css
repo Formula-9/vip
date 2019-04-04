@@ -492,8 +492,46 @@ textarea {
 }
 
 .insertionEchouee {
-    background: #00DD7F;
-    color: #44802F;
+    background: #AF7F7F;
+    color: #7F1111;
+}
+
+/* Sélection VIP */
+.selectionVipForm {
+    border: 1px solid black;
+    width: 60%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+}
+
+.selectionVipForm > h4 {
+    margin-left: 2.5%;
+    margin-top: -1.25%;
+    width: 11%;
+    padding-left: 0.5%;
+    background: white;
+}
+
+.selectionVipForm > .suppressionHeader {
+    margin-left: 2.5%;
+    margin-top: -1.25%;
+    width: 12.5%;
+    padding-left: 0.5%;
+    background: white;
+}
+
+.selectionVipForm p, .selectionVipForm label {
+    margin-left: 3%;
+}
+
+.selectionVipForm select {
+    margin-left: 3%;
+}
+
+.selectionVipForm input {
+    display: block;
+    margin: 1% auto;
 }
 
 /* Modifier Vip */
